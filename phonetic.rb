@@ -50,7 +50,11 @@ class PhoneticSearch
 		for word in @raw_words			
 			encoded = self.parse(word)
 			results = @dictionary[encoded]
-			puts "#{word}: #{results.join(" ")}"
+			if not results.nil?
+				puts "#{word}: #{results.join(" ")}"
+			else
+				puts "no equivalent for #{word} found"
+			end
 		end
 	end
 
